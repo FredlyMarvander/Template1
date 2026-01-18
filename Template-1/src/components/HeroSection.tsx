@@ -3,7 +3,8 @@ import { useCallback } from "react";
 
 const images = [
   "https://res.cloudinary.com/degghm3hf/image/upload/v1767793011/beautiful-couple-posing-their-wedding-day_cckap5.jpg",
-  "https://res.cloudinary.com/degghm3hf/image/upload/v1767793011/beautiful-couple-posing-their-wedding-day_cckap5.jpg",
+  "https://res.cloudinary.com/degghm3hf/image/upload/v1768729046/beautiful-couple-posing-their-wedding-day_2_wzwkmq.jpg",
+  "https://res.cloudinary.com/degghm3hf/image/upload/v1768729034/beautiful-couple-posing-their-wedding-day_1_ksmnzr.jpg",
 ];
 
 export default function HeroSection() {

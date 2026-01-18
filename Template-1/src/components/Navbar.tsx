@@ -56,7 +56,7 @@ export default function Navbar() {
         <nav className="hidden md:flex items-center gap-4 lg:gap-8 text-base lg:text-lg text-[#F9F8F6] font-medium">
           <a
             className="hover:opacity-70 transition-opacity duration-300"
-            href="#"
+            href="#home"
           >
             Home
           </a>
