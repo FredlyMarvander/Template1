@@ -103,7 +103,7 @@ export default function Navbar() {
           <div className="flex flex-col px-6 py-4 gap-1 text-base text-[#2E2E2E]">
             <a
               className="hover:opacity-70 hover:bg-[#2E2E2E]/5 transition-all duration-300 py-3 px-4 rounded-lg"
-              href="#"
+              href="#home"
             >
               Home
             </a>
@@ -136,18 +136,6 @@ export default function Navbar() {
               href="#"
             >
               Gallery
-            </a>
-            <a
-              className="hover:opacity-70 hover:bg-[#2E2E2E]/5 transition-all duration-300 py-3 px-4 rounded-lg"
-              href="#"
-            >
-              Rsvp
-            </a>
-            <a
-              className="hover:opacity-70 hover:bg-[#2E2E2E]/5 transition-all duration-300 py-3 px-4 rounded-lg"
-              href="#"
-            >
-              Blog +
             </a>
           </div>
         </div>
