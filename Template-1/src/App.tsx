@@ -4,6 +4,7 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
 import CoupleSection from "./components/CoupleSection";
+import LocationSection from "./components/LocationSection";
 
 function App() {
   return (
@@ -11,6 +12,8 @@ function App() {
       <Navbar />
       <HeroSection />
       <CoupleSection />
+      <LocationSection />
+      <div className="h-96"></div>
     </>
   );
 }
