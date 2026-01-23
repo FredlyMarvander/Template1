@@ -1,11 +1,32 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Icon } from "./Icon";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrollY, setScrollY] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrollY(true);
+      } else {
+        setScrollY(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-transparent  backdrop-blur-md shadow-md">
+    <header
+      className={`
+    fixed top-0 left-0 right-0 z-50
+    ${scrollY ? "bg-[#A9907E]/70" : "bg-white/0"}
+    backdrop-blur-lg
+    transition-all duration-700 ease-out
+  `}
+    >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 py-6 sm:py-6 flex items-center justify-between">
         <h2 className="flex items-center gap-2 sm:gap-3 mt-2 text-3xl sm:text-3xl md:text-3xl leading-none text-[#F9F8F6] font-bold ">
           <span
@@ -55,40 +76,44 @@ export default function Navbar() {
         {/* Desktop navigation */}
         <nav className="hidden md:flex items-center gap-4 lg:gap-8 text-base lg:text-lg text-[#F9F8F6] font-medium">
           <a
-            className="hover:opacity-70 transition-opacity duration-300"
-            href="#home"
+            className="hover:opacity-70 transition-opacity duration-300 "
+            href="#"
+            style={{
+              scrollBehavior: "smooth",
+            }}
           >
-            Home
+            Beranda
+          </a>
+          <a
+            className="hover:opacity-70 transition-opacity duration-300 "
+            href="#couple"
+          >
+            Pasangan
           </a>
           <a
             className="hover:opacity-70 transition-opacity duration-300"
-            href="#"
+            href="#story"
           >
-            Couple
+            Kisah Kami
           </a>
           <a
             className="hover:opacity-70 transition-opacity duration-300"
-            href="#"
+            href="#people"
           >
-            Story
+            Keluarga
+          </a>
+
+          <a
+            className="hover:opacity-70 transition-opacity duration-300"
+            href="#gallery"
+          >
+            Galeri
           </a>
           <a
             className="hover:opacity-70 transition-opacity duration-300"
-            href="#"
+            href="#location"
           >
-            People
-          </a>
-          <a
-            className="hover:opacity-70 transition-opacity duration-300"
-            href="#"
-          >
-            Events
-          </a>
-          <a
-            className="hover:opacity-70 transition-opacity duration-300"
-            href="#"
-          >
-            Gallery
+            Lokasi
           </a>
         </nav>
       </div>
@@ -105,37 +130,38 @@ export default function Navbar() {
               className="hover:opacity-70 hover:bg-[#2E2E2E]/5 transition-all duration-300 py-3 px-4 rounded-lg"
               href="#home"
             >
-              Home
+              Beranda
             </a>
             <a
               className="hover:opacity-70 hover:bg-[#2E2E2E]/5 transition-all duration-300 py-3 px-4 rounded-lg"
-              href="#"
+              href="#couple"
             >
-              Couple
+              Pasangan
             </a>
             <a
               className="hover:opacity-70 hover:bg-[#2E2E2E]/5 transition-all duration-300 py-3 px-4 rounded-lg"
-              href="#"
+              href="#story"
             >
-              Story
+              Kisah Kami
             </a>
             <a
               className="hover:opacity-70 hover:bg-[#2E2E2E]/5 transition-all duration-300 py-3 px-4 rounded-lg"
-              href="#"
+              href="#people"
             >
-              People
+              Keluarga
+            </a>
+
+            <a
+              className="hover:opacity-70 hover:bg-[#2E2E2E]/5 transition-all duration-300 py-3 px-4 rounded-lg"
+              href="#gallery"
+            >
+              Galeri
             </a>
             <a
               className="hover:opacity-70 hover:bg-[#2E2E2E]/5 transition-all duration-300 py-3 px-4 rounded-lg"
-              href="#"
+              href="#location"
             >
-              Events
-            </a>
-            <a
-              className="hover:opacity-70 hover:bg-[#2E2E2E]/5 transition-all duration-300 py-3 px-4 rounded-lg"
-              href="#"
-            >
-              Gallery
+              Lokasi
             </a>
           </div>
         </div>

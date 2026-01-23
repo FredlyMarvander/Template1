@@ -107,14 +107,14 @@ export default function CoupleSection() {
             <div className="md:w-[40%] flex items-center">
               <div className="w-full border border-white/40 px-8 py-10">
                 <p className="text-white/95 tracking-wide text-2xl md:text-3xl font-semibold">
-                  We Are Waiting For.....
+                  Kami Menantikan…..
                 </p>
 
                 <p
                   className="mt-6 text-white text-5xl md:text-6xl italic leading-none"
                   style={{ fontFamily: "'Great Vibes', cursive" }}
                 >
-                  The Big Day
+                  Hari Bahagia
                 </p>
               </div>
             </div>
@@ -122,10 +122,10 @@ export default function CoupleSection() {
             {/* KANAN */}
             <div className="md:w-[60%] flex items-center">
               <div className="w-full grid grid-cols-4 gap-5">
-                <TimeBox label="DAYS" value={formattedTime.days || 0} />
-                <TimeBox label="HOUR" value={formattedTime.hours || 0} />
-                <TimeBox label="MIN" value={formattedTime.minutes || 0} />
-                <TimeBox label="SEC" value={formattedTime.seconds || 0} />
+                <TimeBox label="HARI" value={formattedTime.days || 0} />
+                <TimeBox label="JAM" value={formattedTime.hours || 0} />
+                <TimeBox label="MENIT" value={formattedTime.minutes || 0} />
+                <TimeBox label="DETIK" value={formattedTime.seconds || 0} />
               </div>
             </div>
           </div>
@@ -146,7 +146,7 @@ export default function CoupleSection() {
               className="text-5xl md:text-6xl italic text-[#A9907E]"
               style={{ fontFamily: "cursive" }}
             >
-              Happy Couple
+              Pasangan Bahagia
             </h2>
 
             {/* Ornamen simpel */}
@@ -165,18 +165,18 @@ export default function CoupleSection() {
                 <div className="mx-auto w-72 h-72 md:w-[360px] md:h-[360px] rounded-full overflow-hidden border-4 border-[#A9907E] shadow-sm">
                   <img
                     src="https://res.cloudinary.com/degghm3hf/image/upload/v1768914893/adorable-bride-is-getting-ready-morning_4_dbao9k.jpg"
-                    alt="Nancy Elizabeth"
+                    alt="Angel Valencia"
                     className="w-full h-full object-cover"
                   />
                 </div>
 
                 <p className="mt-8 text-lg md:text-xl tracking-widest text-[#A9907E] uppercase">
-                  Nancy Elizabeth
+                  Angel Valencia
                 </p>
-                <p className="mt-3 text-md text-[2B2A2A]">
-                  Hi I am Nancy Elizabeth. I am going to introduce myself.I am a
-                  professional graphic designer professional graphic designer
-                  going to introduce myself.I am going to introduce myself.
+                <p className="mt-3 text-md text-[#2B2A2A]">
+                  Halo, saya Angel Valencia. Saya ingin memperkenalkan diri.
+                  Saya seorang desainer grafis profesional yang senang
+                  menciptakan karya visual yang bermakna.
                 </p>
 
                 <div className="mt-8 flex items-center justify-center gap-6">
@@ -200,19 +200,19 @@ export default function CoupleSection() {
                 <div className="mx-auto w-72 h-72 md:w-[360px] md:h-[360px] rounded-full overflow-hidden border-4 border-[#A9907E] shadow-sm">
                   <img
                     src="https://res.cloudinary.com/degghm3hf/image/upload/v1768914509/groom-with-bouquet-flowers_2_bd59ki.jpg"
-                    alt="Harry William"
+                    alt="Kenzie Yang"
                     className="w-full h-full object-cover"
                   />
                 </div>
 
                 <p className="mt-8 text-lg md:text-xl tracking-widest text-[#A9907E] uppercase">
-                  Harry William
+                  Kenzie Yang
                 </p>
 
-                <p className="mt-3 text-md text-[2B2A2A]">
-                  Hi I am Harry William. I am going to introduce myself.I am a
-                  professional graphic designer professional graphic designer
-                  going to introduce myself.I am going to introduce myself.
+                <p className="mt-3 text-md text-[#2B2A2A]">
+                  Halo, saya Kenzie Yang. Saya ingin memperkenalkan diri. Saya
+                  seorang desainer grafis profesional yang senang menciptakan
+                  karya visual yang bermakna.
                 </p>
 
                 <div className="mt-8 flex items-center justify-center gap-6">

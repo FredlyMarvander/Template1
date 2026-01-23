@@ -73,7 +73,7 @@ export default function HeroParallax() {
           </p>
 
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-5">
-            <button
+            <a
               className="
             rounded-full bg-white/95 text-[#A9907E]
             px-12 py-3 font-semibold
@@ -81,9 +81,10 @@ export default function HeroParallax() {
             hover:bg-white hover:shadow-xl
             transition
           "
+              href="#location"
             >
               Location
-            </button>
+            </a>
           </div>
         </div>
       </div>

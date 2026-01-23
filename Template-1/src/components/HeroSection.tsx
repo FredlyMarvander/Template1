@@ -86,7 +86,7 @@ export default function HeroSection() {
           "
         >
           <p className="text-lg md:text-xl text-[#F9F8F6] mb-6">
-            We're Getting Married!
+            Kami Akan Menikah!
           </p>
           <h1
             className="text-3xl md:text-6xl font-serif text-white"
@@ -99,9 +99,9 @@ export default function HeroSection() {
 
           <div className="mt-3 text-[#F9F8F6]">
             <p className="text-lg md:text-xl mt-2">
-              December 15, 2024 | 4:00 PM
+              15 Desember 2026 | 16.00 WIB
             </p>
-            <p className="text-lg md:text-xl mt-2">New York City, NY</p>
+            <p className="text-lg md:text-xl mt-2">Jakarta, Indonesia</p>
           </div>
         </div>
       </div>
