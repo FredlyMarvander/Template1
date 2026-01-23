@@ -137,7 +137,7 @@ export default function Footer() {
 
   const scrollToId = (id: string) => {
     const el = document.getElementById(id);
-    if (!el) return;
+    if (!el) return window.scrollTo({ top: 0, behavior: "smooth" });
     el.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
@@ -155,7 +155,7 @@ export default function Footer() {
             {/* Header / Couple */}
             <div className="text-center">
               <p className="text-xs tracking-[0.35em] uppercase text-black/45">
-                Thank you for celebrating with us
+                Terima kasih telah merayakan bersama kami
               </p>
 
               <h3 className="mt-4 font-[cursive] text-4xl text-[#A9907E]">
@@ -165,7 +165,8 @@ export default function Footer() {
               <HeartDivider color="#A9907E" />
 
               <p className="mx-auto mt-4 max-w-2xl text-sm leading-6 text-black/55">
-                “Every love story is beautiful, but ours is my favorite.”
+                “Setiap kisah cinta itu indah, namun kisah kitalah yang paling
+                istimewa.”
               </p>
             </div>
 
@@ -174,36 +175,36 @@ export default function Footer() {
               {/* Quick Links */}
               <div className="text-center md:text-left">
                 <h4 className="text-sm font-medium tracking-widest text-black/65">
-                  QUICK LINKS
+                  TAUTAN CEPAT
                 </h4>
 
                 <div className="mt-5 space-y-3 text-sm text-black/55">
                   <button
-                    onClick={() => scrollToId("home")}
+                    onClick={() => scrollToId("")}
                     className="hover:text-black transition"
                   >
-                    Home
+                    Beranda
                   </button>
                   <div />
                   <button
                     onClick={() => scrollToId("story")}
                     className="hover:text-black transition"
                   >
-                    Our Story
+                    Kisah Kami
                   </button>
                   <div />
                   <button
                     onClick={() => scrollToId("gallery")}
                     className="hover:text-black transition"
                   >
-                    Gallery
+                    Galeri
                   </button>
                   <div />
                   <button
                     onClick={() => scrollToId("location")}
                     className="hover:text-black transition"
                   >
-                    Location
+                    Lokasi
                   </button>
                 </div>
               </div>
@@ -211,7 +212,7 @@ export default function Footer() {
               {/* Contact */}
               <div className="text-center">
                 <h4 className="text-sm font-medium tracking-widest text-black/65">
-                  CONTACT
+                  KONTAK KAMI
                 </h4>
 
                 <div className="mt-5 space-y-3 text-sm text-black/55">
@@ -225,7 +226,7 @@ export default function Footer() {
                     </a>
                   </p>
                   <p>
-                    Phone:{" "}
+                    Telepon:{" "}
                     <a
                       className="hover:text-black transition underline underline-offset-4 decoration-black/20"
                       href="tel:+6281234567890"
@@ -236,7 +237,7 @@ export default function Footer() {
                   <p className="leading-6">
                     Jakarta, Indonesia
                     <br />
-                    Ceremony & Reception
+                    Akad & Resepsi
                   </p>
                 </div>
               </div>
@@ -244,7 +245,7 @@ export default function Footer() {
               {/* Social */}
               <div className="text-center md:text-right">
                 <h4 className="text-sm font-medium tracking-widest text-black/65">
-                  FOLLOW US
+                  IKUTI KAMI
                 </h4>
 
                 <div className="mt-5 flex items-center justify-center md:justify-end gap-3">
@@ -307,9 +308,9 @@ export default function Footer() {
                 </div>
 
                 <p className="mt-5 text-xs text-black/45">
-                  Share your moments with{" "}
+                  Bagikan momenmu dengan{" "}
                   <span className="text-[#A9907E] font-medium">
-                    #NancyElizabeth
+                    #KenzieAngel
                   </span>
                 </p>
               </div>
@@ -321,7 +322,7 @@ export default function Footer() {
         <div className="border-t border-black/5">
           <div className="mx-auto max-w-6xl px-4 py-5">
             <p className="text-center text-xs text-black/45">
-              © {year} Nancy & Elizabeth. All Rights Reserved.
+              © {year} Kenzie & Angel. Hak Cipta Dilindungi.
             </p>
           </div>
         </div>

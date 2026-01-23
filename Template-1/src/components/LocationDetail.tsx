@@ -1,4 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
+import { MdDateRange } from "react-icons/md";
+import { FaLocationDot } from "react-icons/fa6";
+import { FaLightbulb } from "react-icons/fa";
 
 /** =========================
  *  Hook: animate once on scroll
@@ -63,7 +66,7 @@ function HeartDivider({ color = "#A9907E" }: { color?: string }) {
  *  Types
  *  ========================= */
 type EventLocation = {
-  label: "Ceremony" | "Reception";
+  label: "AKAD" | "RESEPSI";
   title: string;
   date: string;
   time: string;
@@ -77,21 +80,23 @@ type EventLocation = {
  *  ========================= */
 const LOCATIONS: EventLocation[] = [
   {
-    label: "Ceremony",
-    title: "St. Patrick Church",
-    date: "Saturday, 21 December 2026",
-    time: "10:00 AM - 11:30 AM",
+    label: "AKAD",
+    title: "Gereja Katedral Jakarta",
+    date: "Selasa, 15 Desember 2026",
+    time: "Pukul 10.00 – 11.30 WIB",
     address: "Jl. Contoh No. 123, Jakarta, Indonesia",
-    mapQuery: "St. Patrick Church Jakarta",
-    note: "Please arrive 15 minutes earlier.",
+    mapQuery:
+      "Gereja Katedral Jakarta, Jl. Katedral No.7B, Ps. Baru, Sawah Besar, Jakarta Pusat",
+    note: "Harap datang 15 menit lebih awal.",
   },
   {
-    label: "Reception",
-    title: "The Garden Ballroom",
-    date: "Saturday, 21 December 2026",
-    time: "06:30 PM - 09:30 PM",
+    label: "RESEPSI",
+    title: "Balai Kartini",
+    date: "Selasa, 15 Desember 2026",
+    time: "Pukul 18.30 – 21.30 WIB",
     address: "Jl. Contoh No. 456, Jakarta, Indonesia",
-    mapQuery: "The Garden Ballroom Jakarta",
+    mapQuery:
+      "Balai Kartini, Jl. Gatot Subroto Kav. 37, Kuningan Timur, Setiabudi, Jakarta Selatan",
     note: "Dress code: Semi-formal.",
   },
 ];
@@ -126,7 +131,7 @@ function LocationCard({
         transitionDelay: visible ? `${delay}ms` : "0ms",
       }}
     >
-      <div className="p-7">
+      <div className="p-7 flex flex-col items-center">
         {/* Badge */}
         <div className="flex items-center justify-center">
           <span className="inline-flex items-center gap-2 px-4 py-1 text-xs tracking-widest uppercase border border-[#A9907E]/30 text-[#A9907E] bg-[#A9907E]/5">
@@ -141,9 +146,11 @@ function LocationCard({
         </h3>
 
         {/* Info */}
-        <div className="mt-5 space-y-3 text-sm text-black/70">
+        <div className="mt-5 space-y-3 text-sm text-black/70 w-50">
           <div className="flex items-start gap-3">
-            <span className="mt-[2px] text-[#A9907E]">📅</span>
+            <span className="mt-[4px] text-[#A9907E]">
+              <MdDateRange />
+            </span>
             <div>
               <p className="font-medium text-black/75">{item.date}</p>
               <p className="text-black/55">{item.time}</p>
@@ -151,13 +158,17 @@ function LocationCard({
           </div>
 
           <div className="flex items-start gap-3">
-            <span className="mt-[2px] text-[#A9907E]">📍</span>
+            <span className="mt-[5px] text-[#A9907E]">
+              <FaLocationDot />
+            </span>
             <p className="leading-6">{item.address}</p>
           </div>
 
           {item.note && (
             <div className="flex items-start gap-3">
-              <span className="mt-[2px] text-[#A9907E]">💡</span>
+              <span className="mt-[6px] text-[#A9907E]">
+                <FaLightbulb />
+              </span>
               <p className="leading-6 text-black/55">{item.note}</p>
             </div>
           )}
@@ -181,7 +192,7 @@ function LocationCard({
               focus:outline-none focus:ring-2 focus:ring-[#A9907E]/60 focus:ring-offset-2
             "
           >
-            View on Google Maps
+            Lihat di Google Maps
             <span className="text-lg">↗</span>
           </a>
         </div>
@@ -214,11 +225,11 @@ export default function LocationDetail() {
             ${show ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}
           `}
         >
-          <h2 className="font-[cursive] text-4xl text-[#A9907E]">Location</h2>
+          <h2 className="font-[cursive] text-4xl text-[#A9907E]">Lokasi</h2>
           <HeartDivider color="#A9907E" />
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-6 text-black/55">
-            We can’t wait to celebrate with you. Here are the ceremony and
-            reception details — tap the button to get directions.
+            Kami tidak sabar merayakan hari bahagia ini bersama Anda. Berikut
+            detail acara akad dan resepsi — klik tombol untuk melihat lokasi.
           </p>
         </div>
 

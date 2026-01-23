@@ -17,37 +17,37 @@ type TabKey = "groomsmen" | "bridesmaids";
 const GROOMSMEN: Person[] = [
   {
     name: "Mr Abraham",
-    role: "Best Friend",
+    role: "Sahabat",
     photo:
       "https://res.cloudinary.com/degghm3hf/image/upload/v1769091651/handsome-caucasian-guy-glasses-showing-one-finger-smiling-standing-white-background_dwn73z.jpg",
   },
   {
     name: "Rohan Mithy",
-    role: "Brother",
+    role: "Abang",
     photo:
       "https://res.cloudinary.com/degghm3hf/image/upload/v1769091651/handsome-caucasian-guy-glasses-showing-one-finger-smiling-standing-white-background_dwn73z.jpg",
   },
   {
     name: "Mr Alvin",
-    role: "Friend",
+    role: "Teman",
     photo:
       "https://res.cloudinary.com/degghm3hf/image/upload/v1769091651/handsome-caucasian-guy-glasses-showing-one-finger-smiling-standing-white-background_dwn73z.jpg",
   },
   {
     name: "David Crown",
-    role: "Best Man",
+    role: "Pendamping Utama",
     photo:
       "https://res.cloudinary.com/degghm3hf/image/upload/v1769091651/handsome-caucasian-guy-glasses-showing-one-finger-smiling-standing-white-background_dwn73z.jpg",
   },
   {
     name: "Alan Rowen",
-    role: "Brother",
+    role: "Abang",
     photo:
       "https://res.cloudinary.com/degghm3hf/image/upload/v1769091651/handsome-caucasian-guy-glasses-showing-one-finger-smiling-standing-white-background_dwn73z.jpg",
   },
   {
     name: "Ryan Smith",
-    role: "Friend",
+    role: "Teman",
     photo:
       "https://res.cloudinary.com/degghm3hf/image/upload/v1769091651/handsome-caucasian-guy-glasses-showing-one-finger-smiling-standing-white-background_dwn73z.jpg",
   },
@@ -56,37 +56,37 @@ const GROOMSMEN: Person[] = [
 const BRIDESMAIDS: Person[] = [
   {
     name: "Lily Brown",
-    role: "Sister",
+    role: "Kakak",
     photo:
       "https://res.cloudinary.com/degghm3hf/image/upload/v1769091649/lifestyle-beauty-fashion-people-emotions-concept-young-asian-female-office-manager-ceo-with-pleased-expression-standing-white-background-smiling-with-arms-crossed-chest_g3kyxg.jpg",
   },
   {
     name: "Emma Grace",
-    role: "Best Friend",
+    role: "Sahabat",
     photo:
       "https://res.cloudinary.com/degghm3hf/image/upload/v1769091649/lifestyle-beauty-fashion-people-emotions-concept-young-asian-female-office-manager-ceo-with-pleased-expression-standing-white-background-smiling-with-arms-crossed-chest_g3kyxg.jpg",
   },
   {
     name: "Sophia Rose",
-    role: "Friend",
+    role: "Teman",
     photo:
       "https://res.cloudinary.com/degghm3hf/image/upload/v1769091649/lifestyle-beauty-fashion-people-emotions-concept-young-asian-female-office-manager-ceo-with-pleased-expression-standing-white-background-smiling-with-arms-crossed-chest_g3kyxg.jpg",
   },
   {
     name: "Alicia Dawn",
-    role: "Maid of Honor",
+    role: "Pendamping Utama",
     photo:
       "https://res.cloudinary.com/degghm3hf/image/upload/v1769091649/lifestyle-beauty-fashion-people-emotions-concept-young-asian-female-office-manager-ceo-with-pleased-expression-standing-white-background-smiling-with-arms-crossed-chest_g3kyxg.jpg",
   },
   {
     name: "Charlotte May",
-    role: "Friend",
+    role: "Teman",
     photo:
       "https://res.cloudinary.com/degghm3hf/image/upload/v1769091649/lifestyle-beauty-fashion-people-emotions-concept-young-asian-female-office-manager-ceo-with-pleased-expression-standing-white-background-smiling-with-arms-crossed-chest_g3kyxg.jpg",
   },
   {
     name: "Olivia White",
-    role: "Cousin",
+    role: "Sepupu",
     photo:
       "https://res.cloudinary.com/degghm3hf/image/upload/v1769091649/lifestyle-beauty-fashion-people-emotions-concept-young-asian-female-office-manager-ceo-with-pleased-expression-standing-white-background-smiling-with-arms-crossed-chest_g3kyxg.jpg",
   },
@@ -230,7 +230,7 @@ export default function Relative() {
           `}
         >
           <h2 className="font-[cursive] text-4xl text-[#A9907E]">
-            Groomsmen & Bridesmaid
+            Pengiring Pengantin
           </h2>
           <HeartDivider color="#A9907E" />
         </div>
@@ -269,7 +269,7 @@ export default function Relative() {
               aria-selected={activeTab === "groomsmen"}
               role="tab"
             >
-              Groomsman
+              Pengiring Pria
             </button>
 
             <button
@@ -283,7 +283,7 @@ export default function Relative() {
               aria-selected={activeTab === "bridesmaids"}
               role="tab"
             >
-              Bridemaids
+              Pengiring Wanita
             </button>
           </div>
         </div>

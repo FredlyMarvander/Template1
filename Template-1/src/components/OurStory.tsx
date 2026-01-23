@@ -5,30 +5,30 @@ import React, { useEffect, useRef, useState } from "react";
  *  ========================= */
 const STORY_ITEMS = [
   {
-    title: "First time we met",
-    date: "July 20, 2017",
-    desc: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some.",
+    title: "Pertemuan Pertama",
+    date: "20 Juli 2020",
+    desc: "Ada banyak kisah yang mengiringi awal pertemuan kami.Namun dari semua itu, pertemuan inilah yang menjadi awal dari perjalanan cinta kami.",
     image:
       "https://res.cloudinary.com/degghm3hf/image/upload/v1769090910/young-couple-running-along-tracks_c5zshm.jpg",
   },
   {
-    title: "Our First Date",
-    date: "Dec 25, 2017",
-    desc: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some.",
+    title: "Kencan Pertama Kami",
+    date: "25 Desember 2023",
+    desc: "Hari itu menjadi momen yang tak terlupakan bagi kami. Sebuah kencan sederhana yang penuh tawa, cerita, dan awal dari rasa yang semakin tumbuh.",
     image:
       "https://res.cloudinary.com/degghm3hf/image/upload/v1769090987/couple-holding-hands-valentines-evening-restaurant_lkzepi.jpg",
   },
   {
-    title: "Our Marriage Proposal",
-    date: "Jan 10, 2018",
-    desc: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some.",
+    title: "Lamaran Pernikahan Kami",
+    date: "10 Januari 2026",
+    desc: "Hari yang penuh haru dan kebahagiaan. Sebuah pertanyaan sederhana yang akhirnya membawa kami pada satu jawaban: untuk melangkah bersama selamanya.",
     image:
       "https://res.cloudinary.com/degghm3hf/image/upload/v1769091101/side-view-happy-man-proposing_elzhaj.jpg",
   },
   {
-    title: "Our Engagement",
-    date: "Jan 22, 2018",
-    desc: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some.",
+    title: "Pertunangan Kami",
+    date: "22 Juni 2026",
+    desc: "Hari yang penuh kebahagiaan dan harapan. Pada hari itu, kami resmi bertunangan dan berkomitmen untuk melangkah bersama menuju masa depan.",
     image:
       "https://res.cloudinary.com/degghm3hf/image/upload/v1769091164/groom-putting-ring-bride-s-finger_u1w6a1.jpg",
   },
@@ -203,7 +203,7 @@ export default function OurStory() {
       <div className="mx-auto max-w-6xl px-4">
         {/* Header */}
         <div className="text-center">
-          <h2 className="font-[cursive] text-4xl text-[#A9907E]">Our Story</h2>
+          <h2 className="font-[cursive] text-4xl text-[#A9907E]">Kisah Kami</h2>
           <HeartDivider />
         </div>
 

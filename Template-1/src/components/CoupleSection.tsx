@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { formatTime } from "../helper/formatTime";
 import {
   FaFacebookF,
@@ -7,9 +7,50 @@ import {
   FaLinkedinIn,
 } from "react-icons/fa";
 
-function TimeBox({ label, value }: { label: string; value: number }) {
+/** ✅ Hook ringan untuk animasi saat elemen masuk viewport */
+function useInView<T extends HTMLElement>(options?: IntersectionObserverInit) {
+  const ref = useRef<T | null>(null);
+  const [inView, setInView] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setInView(true);
+        observer.disconnect(); // sekali animasi saja
+      }
+    }, options);
+
+    observer.observe(el);
+
+    return () => observer.disconnect();
+  }, [options]);
+
+  return { ref, inView };
+}
+
+function TimeBox({
+  label,
+  value,
+  visible,
+  delay = 0,
+}: {
+  label: string;
+  value: number;
+  visible: boolean;
+  delay?: number;
+}) {
   return (
-    <div className="border border-white/40 px-4 md:px-8 py-8 md:py-10 text-center">
+    <div
+      style={{ transitionDelay: `${delay}ms` }}
+      className={[
+        "border border-white/40 px-4 md:px-8 py-8 md:py-10 text-center",
+        "transition-[opacity,transform] duration-700 ease-out will-change-transform",
+        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6",
+      ].join(" ")}
+    >
       <div className="text-white text-6xl md:text-7xl leading-none">
         {String(value).padStart(2, "0")}
       </div>
@@ -20,33 +61,6 @@ function TimeBox({ label, value }: { label: string; value: number }) {
   );
 }
 
-function HeartIcon({ className = "" }) {
-  return (
-    <svg
-      viewBox="0 0 64 64"
-      fill="none"
-      className={className}
-      aria-hidden="true"
-    >
-      <path
-        d="M32 56s-20-12.6-26.3-25.1C1.7 22.3 6.4 14 15 14c5.2 0 9.2 3 11.4 6.2C28.6 17 32.6 14 38 14c8.6 0 13.3 8.3 9.3 16.9C52 43.4 32 56 32 56Z"
-        stroke="currentColor"
-        strokeWidth="3"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      {/* “brush tail” biar mirip icon di contoh */}
-      <path
-        d="M32 56c8-6 13-13 16-20"
-        stroke="currentColor"
-        strokeWidth="3"
-        strokeLinecap="round"
-        opacity="0.55"
-      />
-    </svg>
-  );
-}
-
 function SocialIcon({ href, icon }: { href: string; icon: React.ReactNode }) {
   return (
     <a
@@ -54,11 +68,11 @@ function SocialIcon({ href, icon }: { href: string; icon: React.ReactNode }) {
       target="_blank"
       rel="noopener noreferrer"
       className="
-        text-[#A9907E]
-        text-xl
-        transition
+        text-[#A9907E] text-xl
+        transition-all duration-300 ease-out
         hover:text-[#8f7662]
-        hover:-translate-y-1
+        hover:-translate-y-1 hover:scale-110
+        active:scale-95
       "
     >
       {icon}
@@ -68,13 +82,11 @@ function SocialIcon({ href, icon }: { href: string; icon: React.ReactNode }) {
 
 export default function CoupleSection() {
   const weddingDate = new Date("2026-01-31T01:00:00Z").getTime();
-
   const [time, setTime] = useState(weddingDate - Date.now());
 
   useEffect(() => {
     const interval = setInterval(() => {
       const diff = weddingDate - Date.now();
-
       if (diff <= 0) {
         setTime(0);
         clearInterval(interval);
@@ -84,64 +96,123 @@ export default function CoupleSection() {
     }, 1000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [weddingDate]);
 
   const formattedTime = formatTime(time);
 
+  /** ✅ animasi on-scroll */
+  const { ref: sectionRef, inView } = useInView<HTMLDivElement>({
+    threshold: 0.15,
+  });
+
   return (
-    <section
-      className="relative py-20 bg-white/70 backdrop-blur-md"
-      id="couple"
-    >
-      <div
-        className="
-    w-full max-w-6xl mx-auto
-    rounded-md overflow-hidden
-    bg-[url('/images/your-bg.jpg')] bg-cover bg-center
-  "
-      >
-        {/* overlay */}
-        <div className="bg-[#A9907E]">
-          <div className="flex flex-col md:flex-row items-stretch gap-6 px-6 md:px-10 py-10">
-            {/* KIRI */}
-            <div className="md:w-[40%] flex items-center">
-              <div className="w-full border border-white/40 px-8 py-10">
-                <p className="text-white/95 tracking-wide text-2xl md:text-3xl font-semibold">
-                  Kami Menantikan…..
-                </p>
-
-                <p
-                  className="mt-6 text-white text-5xl md:text-6xl italic leading-none"
-                  style={{ fontFamily: "'Great Vibes', cursive" }}
+    <section className="relative bg-white" id="couple">
+      {/* ========== COUNTDOWN ========== */}
+      <div className="py-20 bg-white/70 backdrop-blur-md">
+        <div
+          ref={sectionRef}
+          className="
+            w-full max-w-6xl mx-auto
+            rounded-md overflow-hidden
+            bg-[url('/images/your-bg.jpg')] bg-cover bg-center
+          "
+        >
+          {/* overlay */}
+          <div className="bg-[#A9907E]">
+            <div
+              className={[
+                "flex flex-col md:flex-row items-stretch gap-6 px-6 md:px-10 py-10",
+                "transition-[opacity,transform] duration-700 ease-out",
+                inView
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-5",
+              ].join(" ")}
+            >
+              {/* KIRI */}
+              <div className="md:w-[40%] flex items-center">
+                <div
+                  style={{ transitionDelay: "80ms" }}
+                  className={[
+                    "w-full border border-white/40 px-8 py-10",
+                    "transition-[opacity,transform] duration-700 ease-out",
+                    inView
+                      ? "opacity-100 translate-y-0"
+                      : "opacity-0 translate-y-6",
+                  ].join(" ")}
                 >
-                  Hari Bahagia
-                </p>
+                  <p className="text-white/95 tracking-wide text-2xl md:text-3xl font-semibold">
+                    Kami menantikan…..
+                  </p>
+
+                  <p
+                    className="mt-6 text-white text-5xl md:text-6xl italic leading-none"
+                    style={{ fontFamily: "'Great Vibes', cursive" }}
+                  >
+                    Hari Bahagia
+                  </p>
+                </div>
+              </div>
+
+              {/* KANAN */}
+              <div className="md:w-[60%] flex items-center">
+                <div className="w-full grid grid-cols-2 sm:grid-cols-4 gap-5">
+                  <TimeBox
+                    label="HARI"
+                    value={formattedTime.days || 0}
+                    visible={inView}
+                    delay={120}
+                  />
+                  <TimeBox
+                    label="JAM"
+                    value={formattedTime.hours || 0}
+                    visible={inView}
+                    delay={190}
+                  />
+                  <TimeBox
+                    label="MENIT"
+                    value={formattedTime.minutes || 0}
+                    visible={inView}
+                    delay={260}
+                  />
+                  <TimeBox
+                    label="DETIK"
+                    value={formattedTime.seconds || 0}
+                    visible={inView}
+                    delay={330}
+                  />
+                </div>
               </div>
             </div>
 
-            {/* KANAN */}
-            <div className="md:w-[60%] flex items-center">
-              <div className="w-full grid grid-cols-4 gap-5">
-                <TimeBox label="HARI" value={formattedTime.days || 0} />
-                <TimeBox label="JAM" value={formattedTime.hours || 0} />
-                <TimeBox label="MENIT" value={formattedTime.minutes || 0} />
-                <TimeBox label="DETIK" value={formattedTime.seconds || 0} />
+            {formattedTime.message && (
+              <div
+                style={{ transitionDelay: "420ms" }}
+                className={[
+                  "px-6 md:px-10 pb-8 text-center text-white text-2xl font-semibold",
+                  "transition-[opacity,transform] duration-700 ease-out",
+                  inView
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-4",
+                ].join(" ")}
+              >
+                {formattedTime.message}
               </div>
-            </div>
+            )}
           </div>
-
-          {formattedTime.message && (
-            <div className="px-6 md:px-10 pb-8 text-center text-white text-2xl font-semibold">
-              {formattedTime.message}
-            </div>
-          )}
         </div>
       </div>
 
+      {/* ========== COUPLE ========== */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           {/* Header */}
-          <div className="text-center mb-14">
+          <div
+            className={[
+              "text-center mb-14",
+              "transition-[opacity,transform] duration-700 ease-out",
+              inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5",
+            ].join(" ")}
+          >
             <h2
               className="text-5xl md:text-6xl italic text-[#A9907E]"
               style={{ fontFamily: "cursive" }}
@@ -161,12 +232,22 @@ export default function CoupleSection() {
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] items-center gap-10 md:gap-16">
               {/* Left */}
-              <div className="text-center">
+              <div
+                style={{ transitionDelay: "120ms" }}
+                className={[
+                  "text-center",
+                  "transition-[opacity,transform] duration-700 ease-out will-change-transform",
+                  inView
+                    ? "opacity-100 translate-x-0"
+                    : "opacity-0 -translate-x-6",
+                ].join(" ")}
+              >
                 <div className="mx-auto w-72 h-72 md:w-[360px] md:h-[360px] rounded-full overflow-hidden border-4 border-[#A9907E] shadow-sm">
                   <img
                     src="https://res.cloudinary.com/degghm3hf/image/upload/v1768914893/adorable-bride-is-getting-ready-morning_4_dbao9k.jpg"
                     alt="Angel Valencia"
                     className="w-full h-full object-cover"
+                    loading="lazy"
                   />
                 </div>
 
@@ -188,20 +269,38 @@ export default function CoupleSection() {
               </div>
 
               {/* Heart center */}
-              <div className="flex items-center justify-center">
+              <div
+                style={{ transitionDelay: "220ms" }}
+                className={[
+                  "flex items-center justify-center",
+                  "transition-[opacity,transform] duration-700",
+                  inView ? "opacity-100 scale-100" : "opacity-0 scale-95",
+                ].join(" ")}
+              >
                 <img
                   src="https://res.cloudinary.com/degghm3hf/image/upload/v1768913204/ChatGPT_Image_Jan_20_2026_07_46_16_PM_e73z3d.png"
                   alt="Heart Icon"
+                  loading="lazy"
                 />
               </div>
 
               {/* Right */}
-              <div className="text-center">
+              <div
+                style={{ transitionDelay: "120ms" }}
+                className={[
+                  "text-center",
+                  "transition-[opacity,transform] duration-700 ease-out will-change-transform",
+                  inView
+                    ? "opacity-100 translate-x-0"
+                    : "opacity-0 translate-x-6",
+                ].join(" ")}
+              >
                 <div className="mx-auto w-72 h-72 md:w-[360px] md:h-[360px] rounded-full overflow-hidden border-4 border-[#A9907E] shadow-sm">
                   <img
                     src="https://res.cloudinary.com/degghm3hf/image/upload/v1768914509/groom-with-bouquet-flowers_2_bd59ki.jpg"
                     alt="Kenzie Yang"
                     className="w-full h-full object-cover"
+                    loading="lazy"
                   />
                 </div>
 

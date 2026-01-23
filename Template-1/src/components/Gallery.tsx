@@ -8,27 +8,27 @@ type GalleryItem = {
 const GALLERY: GalleryItem[] = [
   {
     src: "https://res.cloudinary.com/degghm3hf/image/upload/v1769092664/beautiful-couple-having-their-wedding-beach_qymixf.jpg",
-    alt: "Wedding moment 1",
+    alt: "Momen Pernikahan 1",
   },
   {
     src: "https://res.cloudinary.com/degghm3hf/image/upload/v1769092763/beautiful-couple-spend-time-summer-park_p1fwuf.jpg",
-    alt: "Wedding moment 2",
+    alt: "Momen Pernikahan 2",
   },
   {
     src: "https://res.cloudinary.com/degghm3hf/image/upload/v1769093324/pexels-diohelmy-19035611_lcz8od.jpg",
-    alt: "Wedding moment 3",
+    alt: "Momen Pernikahan 3",
   },
   {
     src: "https://res.cloudinary.com/degghm3hf/image/upload/v1769093366/canggu-bali-prewedding_auqjd0.jpg",
-    alt: "Wedding moment 4",
+    alt: "Momen Pernikahan 4",
   },
   {
     src: "https://res.cloudinary.com/degghm3hf/image/upload/v1769093428/Snapinsta.app_311004689_867196497603115_64550288706484395_n_1080_ahyu2q.jpg",
-    alt: "Wedding moment 5",
+    alt: "Momen Pernikahan 5",
   },
   {
     src: "https://res.cloudinary.com/degghm3hf/image/upload/v1769093553/beautiful-wedding-ceremony-nature_1_dz2i1r.jpg",
-    alt: "Wedding moment 6",
+    alt: "Momen Pernikahan 6",
   },
 ];
 
@@ -175,7 +175,7 @@ function Lightbox({
           <div className="px-5 py-4 text-sm text-black/70">
             {alt}
             <span className="ml-2 text-black/40">
-              (ESC to close • ← → to navigate)
+              (ESC untuk menutup • ← → untuk berpindah)
             </span>
           </div>
         </div>
@@ -224,8 +224,8 @@ export default function Gallery() {
             ${show ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}
           `}
         >
-          <h2 className="font-[cursive] text-4xl text-[#5C8E83]">
-            Our Gallery
+          <h2 className="font-[cursive] text-4xl text-[#A9907E]">
+            Galeri Kami
           </h2>
           <HeartDivider color="#A9907E" />
         </div>
@@ -287,7 +287,7 @@ export default function Gallery() {
                   <div className="h-12 w-12 rounded-full bg-white/90 shadow flex items-center justify-center">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="h-5 w-5 text-[#5C8E83]"
+                      className="h-5 w-5 text-[#A9907E]"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
