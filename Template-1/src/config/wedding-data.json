@@ -1,0 +1,267 @@
+{
+  "site": {
+    "themeColor": "#A9907E",
+    "coupleNames": {
+      "left": "Kenzie",
+      "right": "Angel",
+      "short": "Kenzie & Angel"
+    },
+    "hashtag": "#KenzieAngel"
+  },
+
+  "navbar": {
+    "brand": {
+      "leftName": "Kenzie",
+      "rightName": "Angel",
+      "icon": "heart"
+    },
+    "links": [
+      { "label": "Beranda", "id": "home" },
+      { "label": "Pasangan", "id": "#couple" },
+      { "label": "Kisah Kami", "id": "#story" },
+      { "label": "Pengiring Pengantin", "id": "#people" },
+      { "label": "Galeri", "id": "#gallery" },
+      { "label": "Lokasi", "id": "#location" }
+    ]
+  },
+
+  "hero": {
+    "id": "home",
+    "sliderImages": [
+      "https://res.cloudinary.com/degghm3hf/image/upload/v1767793011/beautiful-couple-posing-their-wedding-day_cckap5.jpg",
+      "https://res.cloudinary.com/degghm3hf/image/upload/v1768729046/beautiful-couple-posing-their-wedding-day_2_wzwkmq.jpg",
+      "https://res.cloudinary.com/degghm3hf/image/upload/v1768729034/beautiful-couple-posing-their-wedding-day_1_ksmnzr.jpg"
+    ],
+    "frameImage": "https://res.cloudinary.com/degghm3hf/image/upload/v1768721970/1.5434f27c_lp0gmg.png",
+    "subtitle": "Kami Akan Menikah!",
+    "title": "Kenzie & Angel",
+    "meta": {
+      "dateText": "15 Desember 2026 | 16.00 WIB",
+      "locationText": "Jakarta, Indonesia"
+    }
+  },
+
+  "countdown": {
+    "titleSmall": "Kami menantikan…..",
+    "titleMain": "Hari Bahagia",
+    "weddingDateISO": "2026-12-15T16:00:00+07:00"
+  },
+
+  "couple": {
+    "sectionTitle": "Pasangan Bahagia",
+    "centerOrnamentImage": "https://res.cloudinary.com/degghm3hf/image/upload/v1768913204/ChatGPT_Image_Jan_20_2026_07_46_16_PM_e73z3d.png",
+    "people": [
+      {
+        "role": "bride",
+        "name": "Angel Valencia",
+        "photo": "https://res.cloudinary.com/degghm3hf/image/upload/v1768914893/adorable-bride-is-getting-ready-morning_4_dbao9k.jpg",
+        "bio": "Halo, saya Angel Valencia. Saya ingin memperkenalkan diri. Saya seorang desainer grafis profesional yang senang menciptakan karya visual yang bermakna.",
+        "socials": [
+          { "type": "facebook", "url": "#" },
+          { "type": "twitter", "url": "#" },
+          { "type": "google", "url": "#" },
+          { "type": "linkedin", "url": "#" }
+        ]
+      },
+      {
+        "role": "groom",
+        "name": "Kenzie Yang",
+        "photo": "https://res.cloudinary.com/degghm3hf/image/upload/v1768914509/groom-with-bouquet-flowers_2_bd59ki.jpg",
+        "bio": "Halo, saya Kenzie Yang. Saya ingin memperkenalkan diri. Saya seorang desainer grafis profesional yang senang menciptakan karya visual yang bermakna.",
+        "socials": [
+          { "type": "facebook", "url": "#" },
+          { "type": "twitter", "url": "#" },
+          { "type": "google", "url": "#" },
+          { "type": "linkedin", "url": "#" }
+        ]
+      }
+    ]
+  },
+
+  "locationSection": {
+    "title": "Selamat Datang di Hari Bahagia Kami",
+    "subtitle": "Hari yang penuh cinta akhirnya datang. Dengan segala kerendahan hati, kami mengundang Anda untuk merayakan hari bahagia kami bersama.",
+    "buttonText": "Lihat Lokasi",
+    "urlLocation": "location"
+  },
+
+  "story": {
+    "sectionTitle": "Kisah Kami",
+    "items": [
+      {
+        "title": "Pertemuan Pertama",
+        "date": "20 Juli 2020",
+        "desc": "Ada banyak kisah yang mengiringi awal pertemuan kami. Namun dari semua itu, pertemuan inilah yang menjadi awal dari perjalanan cinta kami.",
+        "image": "https://res.cloudinary.com/degghm3hf/image/upload/v1769090910/young-couple-running-along-tracks_c5zshm.jpg"
+      },
+      {
+        "title": "Kencan Pertama Kami",
+        "date": "25 Desember 2023",
+        "desc": "Hari itu menjadi momen yang tak terlupakan bagi kami. Sebuah kencan sederhana yang penuh tawa, cerita, dan awal dari rasa yang semakin tumbuh.",
+        "image": "https://res.cloudinary.com/degghm3hf/image/upload/v1769090987/couple-holding-hands-valentines-evening-restaurant_lkzepi.jpg"
+      },
+      {
+        "title": "Lamaran Pernikahan Kami",
+        "date": "10 Januari 2026",
+        "desc": "Hari yang penuh haru dan kebahagiaan. Sebuah pertanyaan sederhana yang akhirnya membawa kami pada satu jawaban: untuk melangkah bersama selamanya.",
+        "image": "https://res.cloudinary.com/degghm3hf/image/upload/v1769091101/side-view-happy-man-proposing_elzhaj.jpg"
+      },
+      {
+        "title": "Pertunangan Kami",
+        "date": "22 Juni 2026",
+        "desc": "Hari yang penuh kebahagiaan dan harapan. Pada hari itu, kami resmi bertunangan dan berkomitmen untuk melangkah bersama menuju masa depan.",
+        "image": "https://res.cloudinary.com/degghm3hf/image/upload/v1769091164/groom-putting-ring-bride-s-finger_u1w6a1.jpg"
+      }
+    ]
+  },
+
+  "people": {
+    "sectionTitle": "Pengiring Pengantin",
+    "sectionGroomsmen": "Pengiring Pria",
+    "sectionBridesmaids": "Pengiring Wanita",
+    "groomsmen": [
+      {
+        "name": "Mr Abraham",
+        "role": "Sahabat",
+        "photo": "https://res.cloudinary.com/degghm3hf/image/upload/v1769091651/handsome-caucasian-guy-glasses-showing-one-finger-smiling-standing-white-background_dwn73z.jpg"
+      },
+      {
+        "name": "Rohan Mithy",
+        "role": "Abang",
+        "photo": "https://res.cloudinary.com/degghm3hf/image/upload/v1769091651/handsome-caucasian-guy-glasses-showing-one-finger-smiling-standing-white-background_dwn73z.jpg"
+      },
+      {
+        "name": "Mr Alvin",
+        "role": "Teman",
+        "photo": "https://res.cloudinary.com/degghm3hf/image/upload/v1769091651/handsome-caucasian-guy-glasses-showing-one-finger-smiling-standing-white-background_dwn73z.jpg"
+      },
+      {
+        "name": "David Crown",
+        "role": "Pendamping Utama",
+        "photo": "https://res.cloudinary.com/degghm3hf/image/upload/v1769091651/handsome-caucasian-guy-glasses-showing-one-finger-smiling-standing-white-background_dwn73z.jpg"
+      },
+      {
+        "name": "Alan Rowen",
+        "role": "Abang",
+        "photo": "https://res.cloudinary.com/degghm3hf/image/upload/v1769091651/handsome-caucasian-guy-glasses-showing-one-finger-smiling-standing-white-background_dwn73z.jpg"
+      },
+      {
+        "name": "Ryan Smith",
+        "role": "Teman",
+        "photo": "https://res.cloudinary.com/degghm3hf/image/upload/v1769091651/handsome-caucasian-guy-glasses-showing-one-finger-smiling-standing-white-background_dwn73z.jpg"
+      }
+    ],
+    "bridesmaids": [
+      {
+        "name": "Lily Brown",
+        "role": "Kakak",
+        "photo": "https://res.cloudinary.com/degghm3hf/image/upload/v1769091649/lifestyle-beauty-fashion-people-emotions-concept-young-asian-female-office-manager-ceo-with-pleased-expression-standing-white-background-smiling-with-arms-crossed-chest_g3kyxg.jpg"
+      },
+      {
+        "name": "Emma Grace",
+        "role": "Sahabat",
+        "photo": "https://res.cloudinary.com/degghm3hf/image/upload/v1769091649/lifestyle-beauty-fashion-people-emotions-concept-young-asian-female-office-manager-ceo-with-pleased-expression-standing-white-background-smiling-with-arms-crossed-chest_g3kyxg.jpg"
+      },
+      {
+        "name": "Sophia Rose",
+        "role": "Teman",
+        "photo": "https://res.cloudinary.com/degghm3hf/image/upload/v1769091649/lifestyle-beauty-fashion-people-emotions-concept-young-asian-female-office-manager-ceo-with-pleased-expression-standing-white-background-smiling-with-arms-crossed-chest_g3kyxg.jpg"
+      },
+      {
+        "name": "Alicia Dawn",
+        "role": "Pendamping Utama",
+        "photo": "https://res.cloudinary.com/degghm3hf/image/upload/v1769091649/lifestyle-beauty-fashion-people-emotions-concept-young-asian-female-office-manager-ceo-with-pleased-expression-standing-white-background-smiling-with-arms-crossed-chest_g3kyxg.jpg"
+      },
+      {
+        "name": "Charlotte May",
+        "role": "Teman",
+        "photo": "https://res.cloudinary.com/degghm3hf/image/upload/v1769091649/lifestyle-beauty-fashion-people-emotions-concept-young-asian-female-office-manager-ceo-with-pleased-expression-standing-white-background-smiling-with-arms-crossed-chest_g3kyxg.jpg"
+      },
+      {
+        "name": "Olivia White",
+        "role": "Sepupu",
+        "photo": "https://res.cloudinary.com/degghm3hf/image/upload/v1769091649/lifestyle-beauty-fashion-people-emotions-concept-young-asian-female-office-manager-ceo-with-pleased-expression-standing-white-background-smiling-with-arms-crossed-chest_g3kyxg.jpg"
+      }
+    ]
+  },
+
+  "gallery": {
+    "sectionTitle": "Galeri Kami",
+    "items": [
+      {
+        "src": "https://res.cloudinary.com/degghm3hf/image/upload/v1769092664/beautiful-couple-having-their-wedding-beach_qymixf.jpg",
+        "alt": "Momen Pernikahan 1"
+      },
+      {
+        "src": "https://res.cloudinary.com/degghm3hf/image/upload/v1769092763/beautiful-couple-spend-time-summer-park_p1fwuf.jpg",
+        "alt": "Momen Pernikahan 2"
+      },
+      {
+        "src": "https://res.cloudinary.com/degghm3hf/image/upload/v1769093324/pexels-diohelmy-19035611_lcz8od.jpg",
+        "alt": "Momen Pernikahan 3"
+      },
+      {
+        "src": "https://res.cloudinary.com/degghm3hf/image/upload/v1769093366/canggu-bali-prewedding_auqjd0.jpg",
+        "alt": "Momen Pernikahan 4"
+      },
+      {
+        "src": "https://res.cloudinary.com/degghm3hf/image/upload/v1769093428/Snapinsta.app_311004689_867196497603115_64550288706484395_n_1080_ahyu2q.jpg",
+        "alt": "Momen Pernikahan 5"
+      },
+      {
+        "src": "https://res.cloudinary.com/degghm3hf/image/upload/v1769093553/beautiful-wedding-ceremony-nature_1_dz2i1r.jpg",
+        "alt": "Momen Pernikahan 6"
+      }
+    ]
+  },
+
+  "location": {
+    "sectionTitle": "Lokasi",
+    "subtitle": "Kami tidak sabar merayakan hari bahagia ini bersama Anda. Berikut detail acara akad dan resepsi — klik tombol untuk melihat lokasi.",
+    "buttonText": "Lihat di Google Maps",
+    "events": [
+      {
+        "label": "AKAD",
+        "title": "Gereja Katedral Jakarta",
+        "date": "Selasa, 15 Desember 2026",
+        "time": "Pukul 10.00 – 11.30 WIB",
+        "address": "Jl. Contoh No. 123, Jakarta, Indonesia",
+        "mapQuery": "Gereja Katedral Jakarta, Jl. Katedral No.7B, Ps. Baru, Sawah Besar, Jakarta Pusat",
+        "note": "Harap datang 15 menit lebih awal."
+      },
+      {
+        "label": "RESEPSI",
+        "title": "Balai Kartini",
+        "date": "Selasa, 15 Desember 2026",
+        "time": "Pukul 18.30 – 21.30 WIB",
+        "address": "Jl. Contoh No. 456, Jakarta, Indonesia",
+        "mapQuery": "Balai Kartini, Jl. Gatot Subroto Kav. 37, Kuningan Timur, Setiabudi, Jakarta Selatan",
+        "note": "Dress code: Semi-formal."
+      }
+    ]
+  },
+
+  "footer": {
+    "headline": "Terima kasih telah merayakan bersama kami",
+    "quote": "Setiap kisah cinta itu indah, namun kisah kitalah yang paling istimewa.",
+    "couple": {
+      "left": "Kenzie",
+      "right": "Angel"
+    },
+    "quickLinksTitle": "Tautan Cepat",
+    "contactTitle": "Kontak",
+    "followTitle": "Ikuti Kami",
+    "shareText": "Bagikan momen indahmu dengan #KenzieAngel",
+
+    "contact": {
+      "email": "hello@wedding.com",
+      "phone": "+62 812-3456-7890",
+      "cityLine1": "Jakarta, Indonesia",
+      "cityLine2": "Akad & Resepsi"
+    }
+  },
+
+  "welcome": {
+    "message": "Dengan memohon rahmat dan ridho Allah SWT, kami mengundang Bapak/Ibu/Saudara/i untuk hadir di hari bahagia kami."
+  }
+}

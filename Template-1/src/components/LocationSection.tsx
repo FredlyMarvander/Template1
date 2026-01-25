@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import data from "../config/wedding-data.json";
 
 export default function HeroParallax() {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -92,7 +93,7 @@ export default function HeroParallax() {
             ].join(" ")}
             style={{ fontFamily: "'Great Vibes', cursive" }}
           >
-            Selamat Datang di Hari Bahagia Kami
+            {data.locationSection.title}
           </h1>
 
           {/* ✅ Desc animation (delay) */}
@@ -105,9 +106,7 @@ export default function HeroParallax() {
             ].join(" ")}
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
-            Hari yang penuh cinta akhirnya datang. Dengan segala kerendahan
-            hati, kami mengundang Anda untuk merayakan hari bahagia kami
-            bersama.
+            {data.locationSection.subtitle}
           </p>
 
           {/* ✅ Button animation (delay + scale) */}
@@ -128,9 +127,9 @@ export default function HeroParallax() {
                 active:scale-95
                 transition-all duration-300 ease-out
               "
-              href="#location"
+              href={`#${data.locationSection.urlLocation}`}
             >
-              Lihat Lokasi
+              {data.locationSection.buttonText}
             </a>
           </div>
 

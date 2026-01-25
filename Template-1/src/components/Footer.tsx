@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import data from "../config/wedding-data.json";
 
 /** =========================
  *  Hook: animate once on scroll
@@ -155,18 +156,19 @@ export default function Footer() {
             {/* Header / Couple */}
             <div className="text-center">
               <p className="text-xs tracking-[0.35em] uppercase text-black/45">
-                Terima kasih telah merayakan bersama kami
+                {data.footer.headline}
               </p>
 
               <h3 className="mt-4 font-[cursive] text-4xl text-[#A9907E]">
-                Kenzie <span className="text-[#A9907E]">&</span> Angel
+                {data.footer.couple.left}{" "}
+                <span className="text-[#A9907E]">&</span>{" "}
+                {data.footer.couple.right}
               </h3>
 
               <HeartDivider color="#A9907E" />
 
               <p className="mx-auto mt-4 max-w-2xl text-sm leading-6 text-black/55">
-                “Setiap kisah cinta itu indah, namun kisah kitalah yang paling
-                istimewa.”
+                {data.footer.quote}
               </p>
             </div>
 
@@ -175,7 +177,7 @@ export default function Footer() {
               {/* Quick Links */}
               <div className="text-center md:text-left">
                 <h4 className="text-sm font-medium tracking-widest text-black/65">
-                  TAUTAN CEPAT
+                  {data.footer.quickLinksTitle}
                 </h4>
 
                 <div className="mt-5 space-y-3 text-sm text-black/55">
@@ -212,7 +214,7 @@ export default function Footer() {
               {/* Contact */}
               <div className="text-center">
                 <h4 className="text-sm font-medium tracking-widest text-black/65">
-                  KONTAK KAMI
+                  {data.footer.contactTitle}
                 </h4>
 
                 <div className="mt-5 space-y-3 text-sm text-black/55">
@@ -220,24 +222,24 @@ export default function Footer() {
                     Email:{" "}
                     <a
                       className="hover:text-black transition underline underline-offset-4 decoration-black/20"
-                      href="mailto:hello@wedding.com"
+                      href={`mailto:${data.footer.contact.email}`}
                     >
-                      hello@wedding.com
+                      {data.footer.contact.email}
                     </a>
                   </p>
                   <p>
                     Telepon:{" "}
                     <a
                       className="hover:text-black transition underline underline-offset-4 decoration-black/20"
-                      href="tel:+6281234567890"
+                      href={`tel:${data.footer.contact.phone}`}
                     >
-                      +62 812-3456-7890
+                      {data.footer.contact.phone}
                     </a>
                   </p>
                   <p className="leading-6">
-                    Jakarta, Indonesia
+                    {data.footer.contact.cityLine1}
                     <br />
-                    Akad & Resepsi
+                    {data.footer.contact.cityLine2}
                   </p>
                 </div>
               </div>
@@ -245,7 +247,7 @@ export default function Footer() {
               {/* Social */}
               <div className="text-center md:text-right">
                 <h4 className="text-sm font-medium tracking-widest text-black/65">
-                  IKUTI KAMI
+                  {data.footer.followTitle}
                 </h4>
 
                 <div className="mt-5 flex items-center justify-center md:justify-end gap-3">
@@ -310,7 +312,8 @@ export default function Footer() {
                 <p className="mt-5 text-xs text-black/45">
                   Bagikan momenmu dengan{" "}
                   <span className="text-[#A9907E] font-medium">
-                    #KenzieAngel
+                    #{data.footer.couple.left}
+                    {data.footer.couple.right}
                   </span>
                 </p>
               </div>
@@ -322,7 +325,8 @@ export default function Footer() {
         <div className="border-t border-black/5">
           <div className="mx-auto max-w-6xl px-4 py-5">
             <p className="text-center text-xs text-black/45">
-              © {year} Kenzie & Angel. Hak Cipta Dilindungi.
+              © {year} {data.footer.couple.left} & {data.footer.couple.right}.
+              Hak Cipta Dilindungi.
             </p>
           </div>
         </div>

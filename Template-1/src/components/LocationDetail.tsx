@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import { MdDateRange } from "react-icons/md";
 import { FaLocationDot } from "react-icons/fa6";
 import { FaLightbulb } from "react-icons/fa";
+import data from "../config/wedding-data.json";
 
 /** =========================
  *  Hook: animate once on scroll
@@ -78,29 +79,7 @@ type EventLocation = {
 /** =========================
  *  DATA (ganti sesuai kebutuhanmu)
  *  ========================= */
-const LOCATIONS: EventLocation[] = [
-  {
-    label: "AKAD",
-    title: "Gereja Katedral Jakarta",
-    date: "Selasa, 15 Desember 2026",
-    time: "Pukul 10.00 – 11.30 WIB",
-    address: "Jl. Contoh No. 123, Jakarta, Indonesia",
-    mapQuery:
-      "Gereja Katedral Jakarta, Jl. Katedral No.7B, Ps. Baru, Sawah Besar, Jakarta Pusat",
-    note: "Harap datang 15 menit lebih awal.",
-  },
-  {
-    label: "RESEPSI",
-    title: "Balai Kartini",
-    date: "Selasa, 15 Desember 2026",
-    time: "Pukul 18.30 – 21.30 WIB",
-    address: "Jl. Contoh No. 456, Jakarta, Indonesia",
-    mapQuery:
-      "Balai Kartini, Jl. Gatot Subroto Kav. 37, Kuningan Timur, Setiabudi, Jakarta Selatan",
-    note: "Dress code: Semi-formal.",
-  },
-];
-
+const LOCATIONS: EventLocation[] = data.location.events as EventLocation[];
 /** =========================
  *  UI Components
  *  ========================= */
@@ -225,11 +204,12 @@ export default function LocationDetail() {
             ${show ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}
           `}
         >
-          <h2 className="font-[cursive] text-4xl text-[#A9907E]">Lokasi</h2>
+          <h2 className="font-[cursive] text-4xl text-[#A9907E]">
+            {data.location.sectionTitle}
+          </h2>
           <HeartDivider color="#A9907E" />
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-6 text-black/55">
-            Kami tidak sabar merayakan hari bahagia ini bersama Anda. Berikut
-            detail acara akad dan resepsi — klik tombol untuk melihat lokasi.
+            {data.location.subtitle}
           </p>
         </div>
 

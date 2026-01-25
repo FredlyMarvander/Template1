@@ -1,11 +1,6 @@
 import useEmblaCarousel from "embla-carousel-react";
 import { useCallback, useEffect, useState } from "react";
-
-const images = [
-  "https://res.cloudinary.com/degghm3hf/image/upload/v1767793011/beautiful-couple-posing-their-wedding-day_cckap5.jpg",
-  "https://res.cloudinary.com/degghm3hf/image/upload/v1768729046/beautiful-couple-posing-their-wedding-day_2_wzwkmq.jpg",
-  "https://res.cloudinary.com/degghm3hf/image/upload/v1768729034/beautiful-couple-posing-their-wedding-day_1_ksmnzr.jpg",
-];
+import data from "../config/wedding-data.json";
 
 export default function HeroSection() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
@@ -50,7 +45,7 @@ export default function HeroSection() {
   }, [emblaApi]);
 
   return (
-    <section className="relative min-h-screen" id="#home">
+    <section className="relative min-h-screen" id={`#${data.hero.id}`}>
       {/* ✅ keyframes animasi (tanpa ubah tailwind) */}
       <style>{`
         @keyframes heroKenBurns {
@@ -73,7 +68,7 @@ export default function HeroSection() {
       {/* Background utama */}
       <div ref={emblaRef} className="overflow-hidden absolute inset-0">
         <div className="flex h-screen">
-          {images.map((img, i) => (
+          {data.hero.sliderImages.map((img, i) => (
             <div key={i} className="min-w-full">
               <div
                 className="h-screen bg-cover bg-center"
@@ -144,15 +139,16 @@ export default function HeroSection() {
       <div className="relative z-10 min-h-screen flex flex-col items-center justify-center text-center px-4">
         {/* Frame love */}
         <div
-          className="
-            bg-[url('https://res.cloudinary.com/degghm3hf/image/upload/v1768721970/1.5434f27c_lp0gmg.png')]
+          className={`
+          
             bg-center bg-no-repeat bg-contain
             flex flex-col items-center justify-center
             px-16 py-10
             min-w-3xl
             h-84 md:h-108 lg:h-120
-          "
+          `}
           style={{
+            backgroundImage: `url(${data.hero.frameImage})`,
             opacity: mounted ? 1 : 0,
             animation: mounted ? "fadeUp 1.1s ease-out forwards" : "none",
             willChange: "transform, opacity",
@@ -167,7 +163,7 @@ export default function HeroSection() {
               willChange: "transform, opacity",
             }}
           >
-            Kami Akan Menikah!
+            {data.hero.subtitle}
           </p>
 
           <h1
@@ -180,7 +176,7 @@ export default function HeroSection() {
               willChange: "transform, opacity",
             }}
           >
-            Kenzie & Angel
+            {data.hero.title}
           </h1>
 
           <div
@@ -192,10 +188,10 @@ export default function HeroSection() {
               willChange: "transform, opacity",
             }}
           >
+            <p className="text-lg md:text-xl mt-2">{data.hero.meta.dateText}</p>
             <p className="text-lg md:text-xl mt-2">
-              15 Desember 2026 | 16.00 WIB
+              {data.hero.meta.locationText}
             </p>
-            <p className="text-lg md:text-xl mt-2">Jakarta, Indonesia</p>
           </div>
         </div>
       </div>

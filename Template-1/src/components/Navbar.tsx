@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Icon } from "./Icon";
+import data from "../config/wedding-data.json";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -92,7 +93,7 @@ export default function Navbar() {
               fontFamily: "Great Vibes, cursive",
             }}
           >
-            Kenzie
+            {data.site.coupleNames.left}
           </span>
 
           {/* ✅ Heart icon pop halus (tanpa ubah class Tailwind) */}
@@ -115,7 +116,7 @@ export default function Navbar() {
               fontFamily: "Great Vibes, cursive",
             }}
           >
-            Angel
+            {data.site.coupleNames.right}
           </span>
         </h2>
 
@@ -155,38 +156,38 @@ export default function Navbar() {
               scrollBehavior: "smooth",
             }}
           >
-            Beranda
+            {data.navbar.links[0].label}
           </a>
           <a
             className="hover:opacity-70 transition-opacity duration-300 "
-            href="#couple"
+            href={data.navbar.links[1].id}
           >
-            Pasangan
+            {data.navbar.links[1].label}
           </a>
           <a
             className="hover:opacity-70 transition-opacity duration-300"
-            href="#story"
+            href={data.navbar.links[2].id}
           >
-            Kisah Kami
+            {data.navbar.links[2].label}
           </a>
           <a
             className="hover:opacity-70 transition-opacity duration-300"
-            href="#people"
+            href={data.navbar.links[3].id}
           >
-            Pengiring Pengantin
+            {data.navbar.links[3].label}
           </a>
 
           <a
             className="hover:opacity-70 transition-opacity duration-300"
-            href="#gallery"
+            href={data.navbar.links[4].id}
           >
-            Galeri
+            {data.navbar.links[4].label}
           </a>
           <a
             className="hover:opacity-70 transition-opacity duration-300"
-            href="#location"
+            href={data.navbar.links[5].id}
           >
-            Lokasi
+            {data.navbar.links[5].label}
           </a>
         </nav>
       </div>
@@ -207,40 +208,40 @@ export default function Navbar() {
           <div className="flex flex-col px-6 py-4 gap-1 text-base text-[#2E2E2E]">
             <a
               className="hover:opacity-70 hover:bg-[#2E2E2E]/5 transition-all duration-300 py-3 px-4 rounded-lg"
-              href="#home"
+              href="#"
             >
-              Beranda
+              {data.navbar.links[0].label}
             </a>
             <a
               className="hover:opacity-70 hover:bg-[#2E2E2E]/5 transition-all duration-300 py-3 px-4 rounded-lg"
-              href="#couple"
+              href={data.navbar.links[1].id}
             >
-              Pasangan
+              {data.navbar.links[1].label}
             </a>
             <a
               className="hover:opacity-70 hover:bg-[#2E2E2E]/5 transition-all duration-300 py-3 px-4 rounded-lg"
-              href="#story"
+              href={data.navbar.links[2].id}
             >
-              Kisah Kami
+              {data.navbar.links[2].label}
             </a>
             <a
               className="hover:opacity-70 hover:bg-[#2E2E2E]/5 transition-all duration-300 py-3 px-4 rounded-lg"
-              href="#people"
+              href={data.navbar.links[3].id}
             >
-              Pengiring Pengantin
+              {data.navbar.links[3].label}
             </a>
 
             <a
               className="hover:opacity-70 hover:bg-[#2E2E2E]/5 transition-all duration-300 py-3 px-4 rounded-lg"
-              href="#gallery"
+              href={data.navbar.links[4].id}
             >
-              Galeri
+              {data.navbar.links[4].label}
             </a>
             <a
               className="hover:opacity-70 hover:bg-[#2E2E2E]/5 transition-all duration-300 py-3 px-4 rounded-lg"
-              href="#location"
+              href={data.navbar.links[5].id}
             >
-              Lokasi
+              {data.navbar.links[5].label}
             </a>
           </div>
         </div>

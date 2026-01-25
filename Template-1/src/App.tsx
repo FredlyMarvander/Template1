@@ -11,11 +11,20 @@ import Relative from "./components/Relative";
 import Gallery from "./components/Gallery";
 import LocationDetail from "./components/LocationDetail";
 import Footer from "./components/Footer";
+import MusicPlayer from "./components/MusicPlayer";
+import WelcomePopup from "./components/Welcome";
 
 function App() {
   return (
     <>
+      <WelcomePopup
+        onOpen={() => {
+          // Optional: trigger music player saat popup dibuka
+          console.log("Undangan dibuka!");
+        }}
+      />
       <Navbar />
+      <MusicPlayer />
       <ScrollUp />
       <HeroSection />
       <CoupleSection />

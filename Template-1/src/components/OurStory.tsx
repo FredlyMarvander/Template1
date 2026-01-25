@@ -1,38 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
-
+import data from "../config/wedding-data.json";
 /** =========================
  *  DATA
  *  ========================= */
-const STORY_ITEMS = [
-  {
-    title: "Pertemuan Pertama",
-    date: "20 Juli 2020",
-    desc: "Ada banyak kisah yang mengiringi awal pertemuan kami.Namun dari semua itu, pertemuan inilah yang menjadi awal dari perjalanan cinta kami.",
-    image:
-      "https://res.cloudinary.com/degghm3hf/image/upload/v1769090910/young-couple-running-along-tracks_c5zshm.jpg",
-  },
-  {
-    title: "Kencan Pertama Kami",
-    date: "25 Desember 2023",
-    desc: "Hari itu menjadi momen yang tak terlupakan bagi kami. Sebuah kencan sederhana yang penuh tawa, cerita, dan awal dari rasa yang semakin tumbuh.",
-    image:
-      "https://res.cloudinary.com/degghm3hf/image/upload/v1769090987/couple-holding-hands-valentines-evening-restaurant_lkzepi.jpg",
-  },
-  {
-    title: "Lamaran Pernikahan Kami",
-    date: "10 Januari 2026",
-    desc: "Hari yang penuh haru dan kebahagiaan. Sebuah pertanyaan sederhana yang akhirnya membawa kami pada satu jawaban: untuk melangkah bersama selamanya.",
-    image:
-      "https://res.cloudinary.com/degghm3hf/image/upload/v1769091101/side-view-happy-man-proposing_elzhaj.jpg",
-  },
-  {
-    title: "Pertunangan Kami",
-    date: "22 Juni 2026",
-    desc: "Hari yang penuh kebahagiaan dan harapan. Pada hari itu, kami resmi bertunangan dan berkomitmen untuk melangkah bersama menuju masa depan.",
-    image:
-      "https://res.cloudinary.com/degghm3hf/image/upload/v1769091164/groom-putting-ring-bride-s-finger_u1w6a1.jpg",
-  },
-];
+const STORY_ITEMS = data.story.items;
 
 /** =========================
  *  HOOK: Animate on scroll once
@@ -203,7 +174,9 @@ export default function OurStory() {
       <div className="mx-auto max-w-6xl px-4">
         {/* Header */}
         <div className="text-center">
-          <h2 className="font-[cursive] text-4xl text-[#A9907E]">Kisah Kami</h2>
+          <h2 className="font-[cursive] text-4xl text-[#A9907E]">
+            {data.story.sectionTitle}
+          </h2>
           <HeartDivider />
         </div>
 

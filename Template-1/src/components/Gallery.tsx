@@ -4,33 +4,9 @@ type GalleryItem = {
   src: string;
   alt: string;
 };
+import data from "../config/wedding-data.json";
 
-const GALLERY: GalleryItem[] = [
-  {
-    src: "https://res.cloudinary.com/degghm3hf/image/upload/v1769092664/beautiful-couple-having-their-wedding-beach_qymixf.jpg",
-    alt: "Momen Pernikahan 1",
-  },
-  {
-    src: "https://res.cloudinary.com/degghm3hf/image/upload/v1769092763/beautiful-couple-spend-time-summer-park_p1fwuf.jpg",
-    alt: "Momen Pernikahan 2",
-  },
-  {
-    src: "https://res.cloudinary.com/degghm3hf/image/upload/v1769093324/pexels-diohelmy-19035611_lcz8od.jpg",
-    alt: "Momen Pernikahan 3",
-  },
-  {
-    src: "https://res.cloudinary.com/degghm3hf/image/upload/v1769093366/canggu-bali-prewedding_auqjd0.jpg",
-    alt: "Momen Pernikahan 4",
-  },
-  {
-    src: "https://res.cloudinary.com/degghm3hf/image/upload/v1769093428/Snapinsta.app_311004689_867196497603115_64550288706484395_n_1080_ahyu2q.jpg",
-    alt: "Momen Pernikahan 5",
-  },
-  {
-    src: "https://res.cloudinary.com/degghm3hf/image/upload/v1769093553/beautiful-wedding-ceremony-nature_1_dz2i1r.jpg",
-    alt: "Momen Pernikahan 6",
-  },
-];
+const GALLERY: GalleryItem[] = data.gallery.items;
 
 /** =========================
  *  Hook: animate once on scroll
@@ -225,7 +201,7 @@ export default function Gallery() {
           `}
         >
           <h2 className="font-[cursive] text-4xl text-[#A9907E]">
-            Galeri Kami
+            {data.gallery.sectionTitle}
           </h2>
           <HeartDivider color="#A9907E" />
         </div>

@@ -6,6 +6,7 @@ import {
   FaGooglePlusG,
   FaLinkedinIn,
 } from "react-icons/fa";
+import data from "../config/wedding-data.json";
 
 /** ✅ Hook ringan untuk animasi saat elemen masuk viewport */
 function useInView<T extends HTMLElement>(options?: IntersectionObserverInit) {
@@ -81,7 +82,7 @@ function SocialIcon({ href, icon }: { href: string; icon: React.ReactNode }) {
 }
 
 export default function CoupleSection() {
-  const weddingDate = new Date("2026-01-31T01:00:00Z").getTime();
+  const weddingDate = new Date(data.countdown.weddingDateISO).getTime();
   const [time, setTime] = useState(weddingDate - Date.now());
 
   useEffect(() => {
@@ -141,14 +142,14 @@ export default function CoupleSection() {
                   ].join(" ")}
                 >
                   <p className="text-white/95 tracking-wide text-2xl md:text-3xl font-semibold">
-                    Kami menantikan…..
+                    {data.countdown.titleMain}
                   </p>
 
                   <p
                     className="mt-6 text-white text-5xl md:text-6xl italic leading-none"
                     style={{ fontFamily: "'Great Vibes', cursive" }}
                   >
-                    Hari Bahagia
+                    {data.countdown.titleSmall}
                   </p>
                 </div>
               </div>
@@ -217,7 +218,7 @@ export default function CoupleSection() {
               className="text-5xl md:text-6xl italic text-[#A9907E]"
               style={{ fontFamily: "cursive" }}
             >
-              Pasangan Bahagia
+              {data.couple.sectionTitle}
             </h2>
 
             {/* Ornamen simpel */}
@@ -244,27 +245,37 @@ export default function CoupleSection() {
               >
                 <div className="mx-auto w-72 h-72 md:w-[360px] md:h-[360px] rounded-full overflow-hidden border-4 border-[#A9907E] shadow-sm">
                   <img
-                    src="https://res.cloudinary.com/degghm3hf/image/upload/v1768914893/adorable-bride-is-getting-ready-morning_4_dbao9k.jpg"
-                    alt="Angel Valencia"
+                    src={data.couple.people[0].photo}
+                    alt={data.couple.people[0].name}
                     className="w-full h-full object-cover"
                     loading="lazy"
                   />
                 </div>
 
                 <p className="mt-8 text-lg md:text-xl tracking-widest text-[#A9907E] uppercase">
-                  Angel Valencia
+                  {data.couple.people[0].name}
                 </p>
                 <p className="mt-3 text-md text-[#2B2A2A]">
-                  Halo, saya Angel Valencia. Saya ingin memperkenalkan diri.
-                  Saya seorang desainer grafis profesional yang senang
-                  menciptakan karya visual yang bermakna.
+                  {data.couple.people[0].bio}
                 </p>
 
                 <div className="mt-8 flex items-center justify-center gap-6">
-                  <SocialIcon href="#" icon={<FaFacebookF />} />
-                  <SocialIcon href="#" icon={<FaTwitter />} />
-                  <SocialIcon href="#" icon={<FaGooglePlusG />} />
-                  <SocialIcon href="#" icon={<FaLinkedinIn />} />
+                  <SocialIcon
+                    href={data.couple.people[0].socials[0].url}
+                    icon={<FaFacebookF />}
+                  />
+                  <SocialIcon
+                    href={data.couple.people[0].socials[1].url}
+                    icon={<FaTwitter />}
+                  />
+                  <SocialIcon
+                    href={data.couple.people[0].socials[2].url}
+                    icon={<FaGooglePlusG />}
+                  />
+                  <SocialIcon
+                    href={data.couple.people[0].socials[3].url}
+                    icon={<FaLinkedinIn />}
+                  />
                 </div>
               </div>
 
@@ -297,28 +308,38 @@ export default function CoupleSection() {
               >
                 <div className="mx-auto w-72 h-72 md:w-[360px] md:h-[360px] rounded-full overflow-hidden border-4 border-[#A9907E] shadow-sm">
                   <img
-                    src="https://res.cloudinary.com/degghm3hf/image/upload/v1768914509/groom-with-bouquet-flowers_2_bd59ki.jpg"
-                    alt="Kenzie Yang"
+                    src={data.couple.people[1].photo}
+                    alt={data.couple.people[1].name}
                     className="w-full h-full object-cover"
                     loading="lazy"
                   />
                 </div>
 
                 <p className="mt-8 text-lg md:text-xl tracking-widest text-[#A9907E] uppercase">
-                  Kenzie Yang
+                  {data.couple.people[1].name}
                 </p>
 
                 <p className="mt-3 text-md text-[#2B2A2A]">
-                  Halo, saya Kenzie Yang. Saya ingin memperkenalkan diri. Saya
-                  seorang desainer grafis profesional yang senang menciptakan
-                  karya visual yang bermakna.
+                  {data.couple.people[1].bio}
                 </p>
 
                 <div className="mt-8 flex items-center justify-center gap-6">
-                  <SocialIcon href="#" icon={<FaFacebookF />} />
-                  <SocialIcon href="#" icon={<FaTwitter />} />
-                  <SocialIcon href="#" icon={<FaGooglePlusG />} />
-                  <SocialIcon href="#" icon={<FaLinkedinIn />} />
+                  <SocialIcon
+                    href={data.couple.people[1].socials[0].url}
+                    icon={<FaFacebookF />}
+                  />
+                  <SocialIcon
+                    href={data.couple.people[1].socials[1].url}
+                    icon={<FaTwitter />}
+                  />
+                  <SocialIcon
+                    href={data.couple.people[1].socials[2].url}
+                    icon={<FaGooglePlusG />}
+                  />
+                  <SocialIcon
+                    href={data.couple.people[1].socials[3].url}
+                    icon={<FaLinkedinIn />}
+                  />
                 </div>
               </div>
             </div>

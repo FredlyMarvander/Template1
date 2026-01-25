@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
+import data from "../config/wedding-data.json";
 
 /** =========================
  *  TYPES
@@ -14,83 +15,9 @@ type TabKey = "groomsmen" | "bridesmaids";
 /** =========================
  *  DATA (contoh)
  *  ========================= */
-const GROOMSMEN: Person[] = [
-  {
-    name: "Mr Abraham",
-    role: "Sahabat",
-    photo:
-      "https://res.cloudinary.com/degghm3hf/image/upload/v1769091651/handsome-caucasian-guy-glasses-showing-one-finger-smiling-standing-white-background_dwn73z.jpg",
-  },
-  {
-    name: "Rohan Mithy",
-    role: "Abang",
-    photo:
-      "https://res.cloudinary.com/degghm3hf/image/upload/v1769091651/handsome-caucasian-guy-glasses-showing-one-finger-smiling-standing-white-background_dwn73z.jpg",
-  },
-  {
-    name: "Mr Alvin",
-    role: "Teman",
-    photo:
-      "https://res.cloudinary.com/degghm3hf/image/upload/v1769091651/handsome-caucasian-guy-glasses-showing-one-finger-smiling-standing-white-background_dwn73z.jpg",
-  },
-  {
-    name: "David Crown",
-    role: "Pendamping Utama",
-    photo:
-      "https://res.cloudinary.com/degghm3hf/image/upload/v1769091651/handsome-caucasian-guy-glasses-showing-one-finger-smiling-standing-white-background_dwn73z.jpg",
-  },
-  {
-    name: "Alan Rowen",
-    role: "Abang",
-    photo:
-      "https://res.cloudinary.com/degghm3hf/image/upload/v1769091651/handsome-caucasian-guy-glasses-showing-one-finger-smiling-standing-white-background_dwn73z.jpg",
-  },
-  {
-    name: "Ryan Smith",
-    role: "Teman",
-    photo:
-      "https://res.cloudinary.com/degghm3hf/image/upload/v1769091651/handsome-caucasian-guy-glasses-showing-one-finger-smiling-standing-white-background_dwn73z.jpg",
-  },
-];
+const GROOMSMEN: Person[] = data.people.groomsmen;
 
-const BRIDESMAIDS: Person[] = [
-  {
-    name: "Lily Brown",
-    role: "Kakak",
-    photo:
-      "https://res.cloudinary.com/degghm3hf/image/upload/v1769091649/lifestyle-beauty-fashion-people-emotions-concept-young-asian-female-office-manager-ceo-with-pleased-expression-standing-white-background-smiling-with-arms-crossed-chest_g3kyxg.jpg",
-  },
-  {
-    name: "Emma Grace",
-    role: "Sahabat",
-    photo:
-      "https://res.cloudinary.com/degghm3hf/image/upload/v1769091649/lifestyle-beauty-fashion-people-emotions-concept-young-asian-female-office-manager-ceo-with-pleased-expression-standing-white-background-smiling-with-arms-crossed-chest_g3kyxg.jpg",
-  },
-  {
-    name: "Sophia Rose",
-    role: "Teman",
-    photo:
-      "https://res.cloudinary.com/degghm3hf/image/upload/v1769091649/lifestyle-beauty-fashion-people-emotions-concept-young-asian-female-office-manager-ceo-with-pleased-expression-standing-white-background-smiling-with-arms-crossed-chest_g3kyxg.jpg",
-  },
-  {
-    name: "Alicia Dawn",
-    role: "Pendamping Utama",
-    photo:
-      "https://res.cloudinary.com/degghm3hf/image/upload/v1769091649/lifestyle-beauty-fashion-people-emotions-concept-young-asian-female-office-manager-ceo-with-pleased-expression-standing-white-background-smiling-with-arms-crossed-chest_g3kyxg.jpg",
-  },
-  {
-    name: "Charlotte May",
-    role: "Teman",
-    photo:
-      "https://res.cloudinary.com/degghm3hf/image/upload/v1769091649/lifestyle-beauty-fashion-people-emotions-concept-young-asian-female-office-manager-ceo-with-pleased-expression-standing-white-background-smiling-with-arms-crossed-chest_g3kyxg.jpg",
-  },
-  {
-    name: "Olivia White",
-    role: "Sepupu",
-    photo:
-      "https://res.cloudinary.com/degghm3hf/image/upload/v1769091649/lifestyle-beauty-fashion-people-emotions-concept-young-asian-female-office-manager-ceo-with-pleased-expression-standing-white-background-smiling-with-arms-crossed-chest_g3kyxg.jpg",
-  },
-];
+const BRIDESMAIDS: Person[] = data.people.bridesmaids;
 
 /** =========================
  *  HOOK: animate once on scroll
@@ -230,7 +157,7 @@ export default function Relative() {
           `}
         >
           <h2 className="font-[cursive] text-4xl text-[#A9907E]">
-            Pengiring Pengantin
+            {data.people.sectionTitle}
           </h2>
           <HeartDivider color="#A9907E" />
         </div>
@@ -269,7 +196,7 @@ export default function Relative() {
               aria-selected={activeTab === "groomsmen"}
               role="tab"
             >
-              Pengiring Pria
+              {data.people.sectionGroomsmen}
             </button>
 
             <button
@@ -283,7 +210,7 @@ export default function Relative() {
               aria-selected={activeTab === "bridesmaids"}
               role="tab"
             >
-              Pengiring Wanita
+              {data.people.sectionBridesmaids}
             </button>
           </div>
         </div>
